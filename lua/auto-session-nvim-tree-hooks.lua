@@ -11,7 +11,7 @@ local function refresh_tree()
       if (tree_type == "nvimtree") then
         pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
         -- want no focus to avoid "'modifiable' is off" errors
-        require('nvim-tree').toggle(false, true)
+        require('nvim-tree.api').tree.toggle(false, true)
       elseif (tree_type == "nerdtree") then
         pcall(vim.api.nvim_buf_delete, bufnr, { force = true })
         vim.cmd 'NERDTreeOpen'
